@@ -1,15 +1,26 @@
 from picamera import PiCamera
 from time import sleep
 
-# Initialize the camera
-camera = PiCamera()
-
-for i in range(9): #change this number for how many pictures we need
-
+def take_pic(i):
+    # Initialize the camera
+    camera = PiCamera()
     camera.start_preview() #if we do the LED screen we would use the preview to present on LED
     sleep(2)
-    camera.capture('/home/pi/Desktop/image.jpg')  #change this for the pi folder
+    camera.capture(f'/home/pi/Desktop/Cube_Pic/image{i}.jpg')
     camera.stop_preview()
+    # Close the camera
+    camera.close()
+    
+def main():
+    i = 0 
+    take_pic(i)
+    i+=1
+    #move the position of the cube (change the steps)
+    take_pic(i)
+    i+=1
+    #repeat this until this is done
+    
 
-# Close the camera
-camera.close()
+    
+
+
