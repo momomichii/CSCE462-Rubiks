@@ -24,3 +24,6 @@ def solve_rubik_cube():
 
 # Run the solver
 solve_rubik_cube()
+# A single letter by itself means to turn that face clockwise 90 degrees.
+# A letter followed by an apostrophe means to turn that face counterclockwise 90 degrees.
+# A letter with the number 2 after it means to turn that face 180 degrees.
