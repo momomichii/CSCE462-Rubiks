@@ -13,12 +13,13 @@ def take_pic(i):
     
 def main():
     i = 0 
-    take_pic(i)
-    i+=1
-    #move the position of the cube (change the steps)
-    take_pic(i)
-    i+=1
-    #repeat this until this is done
+    while(i < 1):
+        take_pic(i)
+        i+=1
+        #move the position of the cube (change the steps)
+        take_pic(i)
+        i+=1
+        #repeat this until this is done
     
 
     
