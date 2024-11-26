@@ -90,48 +90,67 @@ def solve_rubik_cube(cube_state):
         solution = kociemba.solve(formatted_state)
         moves = solution.split()
         print("\nSolution moves:")
+        # White(U), red(R), Green(F), Yellow(D), orange (L), blue(B)
         for move in moves:
             if move == "U":
                 print("U")
+                print("Move white clockwise")
             elif move == "U'":
                 print("U'")
+                print("Move white counterclockwise")
             elif move == "U2":
                 print("U2")
+                print("Move white clockwise twice")
                 
             elif move == "R":
                 print("R")
+                print("Move red clockwise")
             elif move == "R'":
                 print("R'")
+                print("Move red counterclockwise")
             elif move == "R2":
                 print("R2")
+                print("Move red clockwise twice")
                 
             elif move == "F":
                 print("F")
+                print("Move green clockwise")
             elif move == "F'":
                 print("F'")
+                print("Move green counterclockwise")
             elif move == "F2":
                 print("F2")
+                print("Move green clockwise twice")
                 
             elif move == "D":
                 print("D")
+                print("Move yellow clockwise")
             elif move == "D'":
                 print("D'")
+                print("Move yellow counterclockwise")
             elif move == "D2":
                 print("D2")
+                print("Move yellow clockwise twice")
             
             elif move == "L":
                 print("L")
+                print("Move orange clockwise")
             elif move == "L'":
                 print("L'")
+                print("Move orange counterclockwise")
             elif move == "L2":
                 print("L2")
+                print("Move orange clockwise twice")
                 
             elif move == "B":
                 print("B")
+                print("Move blue clockwise")
             elif move == "B'":
                 print("B'")
+                print("Move blue counterclockwise")
             elif move == "B2":
                 print("B2")
+                print("Move blue clockwise twice")
             
             else:
                 print("ERROR")
