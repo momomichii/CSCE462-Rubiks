@@ -86,13 +86,11 @@ def solve_rubik_cube(cube_state):
         formatted_state = convert_to_kociemba_format(cube_state)
         print(f"Formatted Cube State for Kociemba: {formatted_state}")
 
-        # Prompt the user to place the cube in the machine
-        print("\nEnter the cube into the machine.")
-        input("Press Enter to confirm that the cube is placed...")
 
         # Use Kociemba's algorithm to get the solution
         solution = kociemba.solve(formatted_state)
         moves = solution.split()
+        print("Total moves:", len(moves))
         print("\nSolution moves:")
 
         # Provide instructions for the moves
@@ -199,7 +197,9 @@ def main():
                         for f in FACES:
                             for row in face_color_data[f]:
                                 cube_state += "".join([cell if cell else " " for cell in row])
-
+                        # Prompt the user to place the cube in the machine
+                        print("\nEnter the cube into the machine.")
+                        input("Press Enter to confirm that the cube is placed...")
                         # Solve the cube with the converted state
                         print("Cube state for solving:", cube_state)
                         solve_rubik_cube(cube_state)  # Pass the input state here

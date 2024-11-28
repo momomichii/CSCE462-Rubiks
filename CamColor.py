@@ -108,19 +108,22 @@ def convert_to_kociemba(cube_string):
 # Solve the cube and print the steps
 def solve_cube(cube_string):
     try:
+        
         solution = kociemba.solve(cube_string)
         moves = solution.split()
+        print("Total moves:", len(moves))
         print("Solution steps:")
         for move in moves:
             if move == "U":
-                print("U")
-                print("Move white clockwise")
+                # print("U - Move white clockwise")
+                input("U - Move white clockwise")
             elif move == "U'":
-                print("U'")
-                print("Move white counterclockwise")
+                # print("U' - Move white counterclockwise")
+                input("U' - Move white counterclockwise")
+
             elif move == "U2":
-                print("U2")
-                print("Move white clockwise twice")
+                # print("U2 - Move white clockwise twice")
+                input("U2 - Move white clockwise twice")
                 
             elif move == "R":
                 print("R")
@@ -176,6 +179,7 @@ def solve_cube(cube_string):
                 print("ERROR")
     except Exception as e:
         print("Error solving the cube:", e)
+        
 
 # Main program
 def main():
@@ -204,9 +208,22 @@ def main():
 
             # Convert the cube string to Kociemba notation
             kociemba_string = convert_to_kociemba(cube_string)
+            # Prompt the user to confirm the Kociemba string or input a corrected one
             print("Cube representation (for Kociemba):")
             print(kociemba_string)
+            user_input = input("\nIs this the correct cube representation? (y/n): ").strip().lower()
 
+            if user_input == 'n':
+                kociemba_string = input("Please enter the corrected cube representation string: ").strip()
+                # Optionally validate the corrected string here
+                if len(kociemba_string) != 54:
+                    print("Error: The corrected string must be exactly 54 characters long.")
+                    return  # Exit or handle error appropriately
+                print("\nUsing the corrected cube representation.")
+
+            # Prompt the user to place the cube in the machine
+            print("\nEnter the cube into the machine.")
+            input("Press Enter to confirm that the cube is placed...")
             # Solve and print the solution
             solve_cube(kociemba_string)
     finally:
