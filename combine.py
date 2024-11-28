@@ -86,55 +86,61 @@ def solve_rubik_cube(cube_state):
         formatted_state = convert_to_kociemba_format(cube_state)
         print(f"Formatted Cube State for Kociemba: {formatted_state}")
 
+        # Prompt the user to place the cube in the machine
+        print("\nEnter the cube into the machine.")
+        input("Press Enter to confirm that the cube is placed...")
+
         # Use Kociemba's algorithm to get the solution
         solution = kociemba.solve(formatted_state)
         moves = solution.split()
         print("\nSolution moves:")
+
+        # Provide instructions for the moves
         for move in moves:
             if move == "U":
-                print("U")
+                # print("U - Move white clockwise")
+                input("U - Move white clockwise")
             elif move == "U'":
-                print("U'")
+                # print("U' - Move white counterclockwise")
+                input("U' - Move white counterclockwise")
+
             elif move == "U2":
-                print("U2")
+                # print("U2 - Move white clockwise twice")
+                input("U2 - Move white clockwise twice")
                 
             elif move == "R":
-                print("R")
+                print("R - Move red clockwise")
             elif move == "R'":
-                print("R'")
+                print("R' - Move red counterclockwise")
             elif move == "R2":
-                print("R2")
-                
+                print("R2 - Move red clockwise twice")
             elif move == "F":
-                print("F")
+                print("F - Move green clockwise")
             elif move == "F'":
-                print("F'")
+                print("F' - Move green counterclockwise")
             elif move == "F2":
-                print("F2")
-                
+                print("F2 - Move green clockwise twice")
             elif move == "D":
-                print("D")
+                print("D - Move yellow clockwise")
             elif move == "D'":
-                print("D'")
+                print("D' - Move yellow counterclockwise")
             elif move == "D2":
-                print("D2")
-            
+                print("D2 - Move yellow clockwise twice")
             elif move == "L":
-                print("L")
+                print("L - Move orange clockwise")
             elif move == "L'":
-                print("L'")
+                print("L' - Move orange counterclockwise")
             elif move == "L2":
-                print("L2")
-                
+                print("L2 - Move orange clockwise twice")
             elif move == "B":
-                print("B")
+                print("B - Move blue clockwise")
             elif move == "B'":
-                print("B'")
+                print("B' - Move blue counterclockwise")
             elif move == "B2":
-                print("B2")
-            
+                print("B2 - Move blue clockwise twice")
             else:
-                print("ERROR")
+                print("ERROR: Unrecognized move")
+
     except Exception as e:
         print("Error solving the cube:", e)
 
