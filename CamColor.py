@@ -225,7 +225,7 @@ def main():
             print("\nEnter the cube into the machine.")
             input("Press Enter to confirm that the cube is placed...")
             # Solve and print the solution
-            solve_cube(kociemba_string)
+            # solve_cube(kociemba_string)
     finally:
         cap.release()
         cv2.destroyAllWindows()
