@@ -14,6 +14,7 @@ def get_cube_colors():
     #     "Use the following notation:\n"
     #     "U (white), R (red), F (green), D (yellow), L (orange), B (blue)\n"
     # )
+    print("The string needs to be in the correct format.")
     cube_colors = input("Enter the 54-character string for the cube state: ")
     if len(cube_colors) != 54:
         raise ValueError("Invalid input! Ensure the input is exactly 54 characters long.")
@@ -96,7 +97,6 @@ def solve_rubik_cube():
                 print("ERROR")
         
         # Here, add code to execute moves with robot actuators
-        print("\nFollow these moves to solve the cube.")
     except Exception as e:
         print("Error solving the cube:", e)
 
