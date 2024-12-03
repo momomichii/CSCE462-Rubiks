@@ -202,7 +202,9 @@ def main():
                         input("Press Enter to confirm that the cube is placed...")
                         # Solve the cube with the converted state
                         print("Cube state for solving:", cube_state)
-                        solve_rubik_cube(cube_state)  # Pass the input state here
+                        # solve_rubik_cube(cube_state)  # Pass the input state here
+                        formatted_state = convert_to_kociemba_format(cube_state)
+                        print(f"Formatted Cube State for Kociemba: {formatted_state}")
                         pygame.quit()
                         sys.exit()
 
